@@ -28,7 +28,7 @@ namespace Persistencia.Data.Configuration
             .HasMaxLength(30)
             .IsRequired();
 
-            builder.HasOne (e => e.Hamburguesas)
+            builder.HasOne(e => e.Hamburguesas)
             .WithMany (e => e.Chefs)
             .HasForeignKey (e => e.Hamburguesas);
         }
