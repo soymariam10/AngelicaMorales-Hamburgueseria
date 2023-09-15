@@ -1,6 +1,7 @@
 using System.Text;
 using API.Helpers;
 using API.Services;
+using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
 using Dominio.Entities;
 using Dominio.Interfaces;
@@ -28,7 +29,7 @@ namespace API.Extensions;
             /*services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUnitOfWork,UnitOfWork>();*/
-            services.AddScoped<IAuthorizationHandler, GlobalVerbRoleHandler>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         //definimos la configuracion del JWT

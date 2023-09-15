@@ -5,18 +5,18 @@ using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
-using Serilog;
+
 using Persistencia;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var logger = new LoggerConfiguration()
+/*var logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(builder.Configuration)
                     .Enrich.FromLogContext()
                     .CreateLogger();
 
 builder.Logging.ClearProviders();
-builder.Logging.AddSerilog(logger);
+
 /*
  el context accessor nos permite que podamos implementar la autorizacion de roles
 */
