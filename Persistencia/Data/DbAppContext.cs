@@ -7,10 +7,11 @@ namespace Persistencia.Data;
         public DbAppContext(DbContextOptions<DbAppContext> options) : base (options){
 
         }
-
-        public DbSet<Usuario> ? Usuarios { get; set; } = null!;
-        public DbSet<Rol> ? Roles { get; set; } = null!;
-        public DbSet<UsuarioRol> ? UsuarioRoles { get; set; } = null!;
+        public DbSet<Categoria> Categorias{ get; set; } 
+        public DbSet<Chef> Chefs { get; set; }
+        public DbSet<Hamburguesa> Hamburguesas { get; set; }
+        public DbSet<HamburgueseriaIngredientes> HamburgueseriaIngredientes {get; set;}
+        public DbSet<Ingrediente> Ingredientes { get; set;}
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){

@@ -1,4 +1,4 @@
-namespace API.Helpers;
+/*namespace API.Helpers;
 
 public class Pager<T> where T : class{
 
@@ -8,7 +8,7 @@ public class Pager<T> where T : class{
     public int Total { get;  set; }
     public List<T> Registers { get; private set; }
 
-    public Pager()
+    public Pager() 
     {
     }
     
@@ -55,4 +55,4 @@ public class Pager<T> where T : class{
             HasNextPage = value;
         }
     }
-}
+}*/

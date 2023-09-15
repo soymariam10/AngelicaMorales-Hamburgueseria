@@ -1,4 +1,4 @@
-namespace API.Helpers;
+/*namespace API.Helpers;
     public class Autorizacion{
         
         public enum Roles{
@@ -8,4 +8,4 @@ namespace API.Helpers;
         }
         public const Roles rol_predeterminado = Roles.Empleado;
 
-}
+}*/

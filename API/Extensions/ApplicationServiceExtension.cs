@@ -1,8 +1,6 @@
 using System.Text;
 using API.Helpers;
-using API.Helpers.Errors;
 using API.Services;
-using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
 using Dominio.Entities;
 using Dominio.Interfaces;
@@ -27,9 +25,9 @@ namespace API.Extensions;
 
 
         public static void AddAplicacionServices(this IServiceCollection services){
-            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
+            /*services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IUnitOfWork,UnitOfWork>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();*/
             services.AddScoped<IAuthorizationHandler, GlobalVerbRoleHandler>();
         }
 
@@ -63,7 +61,7 @@ namespace API.Extensions;
                 });
         }
 
-        public static void AddValidationErrors(this IServiceCollection services)
+        /*public static void AddValidationErrors(this IServiceCollection services)
         {
             services.Configure<ApiBehaviorOptions>(options =>
             {
@@ -82,7 +80,7 @@ namespace API.Extensions;
                     return new BadRequestObjectResult(errorResponse);
                 };
             });
-        }
+        }*/
 
         //definimos el limite de peticiones que podemos hacer a un EndPoint
         public static void ConfigureRateLimiting(this IServiceCollection services)

@@ -1,7 +1,6 @@
 using System.Reflection;
 using API.Extensions;
 using API.Helpers;
-using API.Helpers.Errors;
 using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -48,7 +47,7 @@ builder.Services.AddAuthorization(opts =>{
 //habilitamos la conexion a la base de datos 
 builder.Services.AddDbContext<DbAppContext>(options =>
 {
-    string ? connectionString = builder.Configuration.GetConnectionString("ConexMysql");
+    string connectionString = builder.Configuration.GetConnectionString("ConexMysql");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
@@ -59,7 +58,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseMiddleware<ExceptionMiddleware>();
+/*app.UseMiddleware<ExceptionMiddleware>();*/
 
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 

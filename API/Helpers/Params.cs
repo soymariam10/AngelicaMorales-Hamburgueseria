@@ -1,4 +1,4 @@
-namespace API.Helpers;
+/*namespace API.Helpers;
     public class Params{
 
         private int _PageSize = 5;
@@ -24,5 +24,5 @@ namespace API.Helpers;
         
         }
 
-    }
+    }*/
     
