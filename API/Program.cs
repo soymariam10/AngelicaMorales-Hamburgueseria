@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 using Serilog;
+using Persistencia;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,12 +30,12 @@ builder.Services.AddControllers( options =>
 
 }).AddXmlSerializerFormatters();
 
-builder.Services.ConfigureCors(); //configuracion de las cors
-builder.Services.AddAplicacionServices(); //configuracion de la UnitOfWork(repo-interface) y otras cosas mas
-// builder.Services.AddJwt(builder.Configuration); //definir los parametros del JWT para añadir 
-builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); //habilitar el AutoMapper
-builder.Services.ConfigureRateLimiting();//habilitar la configuracion del numero de peticiones 
 builder.Services.ConfigureApiVersioning(); //habilitar las versiones o versionado en el proyecto para las Apis
+builder.Services.AddAplicacionServices(); //configuracion de la UnitOfWork(repo-interface) y otras cosas mas
+builder.Services.ConfigureCors(); //configuracion de las cors
+// builder.Services.AddJwt(builder.Configuration); //definir los parametros del JWT para añadir 
+builder.Services.ConfigureRateLimiting();//habilitar la configuracion del numero de peticiones 
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); //habilitar el AutoMapper
 
 
 builder.Services.AddAuthorization(opts =>{
@@ -45,7 +46,7 @@ builder.Services.AddAuthorization(opts =>{
 });
 
 //habilitamos la conexion a la base de datos 
-builder.Services.AddDbContext<DbAppContext>(options =>
+builder.Services.AddDbContext<HamburgueseriaContext>(options =>
 {
     string connectionString = builder.Configuration.GetConnectionString("ConexMysql");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
@@ -76,7 +77,7 @@ using (var scope = app.Services.CreateScope())
    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
    try
     {
-        var context = services.GetRequiredService<DbAppContext>();
+        var context = services.GetRequiredService<HamburgueseriaContext>();
         await context.Database.MigrateAsync();
     }
     catch (Exception ex)

@@ -7,7 +7,6 @@ namespace Dominio.Entities
 {
     public class Hamburguesa : BaseEntity
     {
-        public int HamburguesaId { get; set; }
         public string NombreHamburguesa { get; set; }
         public int PrecioHamburguesa {get; set; }
         public int HamburgueseriaIngredientesId { get; set; }

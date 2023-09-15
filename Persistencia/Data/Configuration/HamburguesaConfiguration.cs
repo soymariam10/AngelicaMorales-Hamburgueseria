@@ -16,7 +16,7 @@ namespace Persistencia.Data.Configuration
         {
             builder.ToTable("Hamburguesas");
 
-            builder.Property(e => e.HamburguesaId)
+            builder.Property(e => e.Id)
             .HasAnnotation("MySqlValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("HamburguesaId")
             .HasColumnType("int")

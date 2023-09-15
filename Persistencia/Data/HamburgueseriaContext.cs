@@ -3,8 +3,8 @@ using Dominio.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia.Data;
-    public class DbAppContext : DbContext{
-        public DbAppContext(DbContextOptions<DbAppContext> options) : base (options){
+    public class HamburgueseriaContext : DbContext{
+        public HamburgueseriaContext(DbContextOptions<HamburgueseriaContext> options) : base (options){
 
         }
         public DbSet<Categoria> Categorias{ get; set; } 

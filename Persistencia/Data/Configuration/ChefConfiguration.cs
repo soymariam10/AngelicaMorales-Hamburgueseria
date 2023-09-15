@@ -15,7 +15,7 @@ namespace Persistencia.Data.Configuration
         {
             builder.ToTable ("Chefs");
 
-            builder.HasKey(e => e.ChefId)
+            builder.HasKey(e => e.Id)
             .HasAnnotation("MySqlValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
             builder.Property(e => e.NombreChef)

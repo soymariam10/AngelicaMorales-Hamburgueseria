@@ -7,7 +7,6 @@ namespace Dominio.Entities
 {
     public class Ingrediente : BaseEntity
     {
-        public int IngredienteId { get; set; }
         public string NombreIngrediente { get; set; }
         public string DescripcionIngrediente {get; set; }
         public int PrecioIngrediente {get; set;}

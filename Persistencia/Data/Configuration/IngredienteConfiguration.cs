@@ -16,7 +16,7 @@ namespace Persistencia.Data.Configuration
         {
             builder.ToTable("Ingredientes");
 
-            builder.Property(x => x.IngredienteId)
+            builder.Property(x => x.Id)
             .HasAnnotation("MySqlValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasMaxLength(30)
             .IsRequired();

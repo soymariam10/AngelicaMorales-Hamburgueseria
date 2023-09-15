@@ -7,9 +7,9 @@ using Persistencia.Data;
 namespace Aplicacion.Repository;
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity{
 
-        private readonly DbAppContext _Context;
+        private readonly HamburgueseriaContext _Context;
 
-        public GenericRepository(DbAppContext context)
+        public GenericRepository(HamburgueseriaContext context)
         {
             _Context = context;
         }
