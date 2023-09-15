@@ -8,7 +8,7 @@ namespace API.Dtos
     public class ChefDto
     {
         public int Id { get; set; }
-        public string NomrbeChef { get; set; }
+        public string NombreChef { get; set; }
         public string Especialidad { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace Aplicacion.UnitOfWork
                     return _categorias;
                 }
             }
-            public int Save(){
+            public int SaveAsync(){
                 return context.SaveChanges();
             }
 
@@ -37,10 +37,15 @@ namespace Aplicacion.UnitOfWork
                 context.Dispose();
             }
 
+        Task IUnitOfWork.SaveAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public IHamburguesaRepository Hamburguesa { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IHamburgueseriaIngredientesRepository HamburgueseriaIngredientes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IIngredienteRepository IngredienteRepository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        ICategoriaRepository IUnitOfWork.Categoria { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IChefRepository Chef { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        ICategoriaRepository IUnitOfWork.Categoria { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

@@ -7,8 +7,10 @@ using Dominio.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace API.Controllers
-{
+namespace API.Controllers;
+[ApiVersion("1.0")]
+[ApiVersion("1.1")]
+
     public class IngredienteController : BaseApiController
     {
         private readonly IUnitOfWork unitOfWork;
@@ -19,4 +21,3 @@ namespace API.Controllers
         }
 
     }
-}

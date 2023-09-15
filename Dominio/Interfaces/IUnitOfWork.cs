@@ -12,5 +12,6 @@ namespace Dominio.Interfaces
         IHamburguesaRepository Hamburguesa { get; set; }
         IHamburgueseriaIngredientesRepository HamburgueseriaIngredientes { get; set; }
         IIngredienteRepository IngredienteRepository { get; set; }
+        Task SaveAsync();
     }
 }
